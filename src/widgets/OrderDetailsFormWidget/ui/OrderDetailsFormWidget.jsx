@@ -1,8 +1,8 @@
 import { BurgersTable, useAllBurgers } from "@/entities/burger"
 import { useOrder } from "@/entities/order"
+import { CancelOrderDetails } from "@/feautures/cancel-order-details"
 import { EditOrderButton } from "@/feautures/edit-order"
 import { OpenEditOrderWindow } from "@/feautures/open-edit-order-window"
-import { OpenOrdersWindow } from "@/feautures/open-orders-window/ui/OpenOrdersWindow"
 import { Stack } from "@/shared/ui/Stack"
 import { useEffect, useState } from "react"
 
@@ -51,7 +51,7 @@ export const OrderDetailsWidget = ({ orderId, isEditMode }) => {
         <OpenEditOrderWindow orderId={orderId} />
       )}
 
-      <OpenOrdersWindow isEditMode={isEditMode} orderId={orderId} isDisabled={isDisabled} />
+      <CancelOrderDetails isEditMode={isEditMode} orderId={orderId} isDisabled={isDisabled} />
     </Stack>
   )
 }

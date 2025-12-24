@@ -1,14 +1,15 @@
 import { Button } from "@/shared/ui/Button"
 import { CancelIcon } from "@/shared/ui/CancelIcon"
 
-export const OpenOrdersWindow = ({ isEditMode, orderId, isDisabled }) => {
+export const CancelOrderDetails = ({ isEditMode, orderId, isDisabled }) => {
   function handleOpen() {
-    if (isDisabled) {
+    if (!isEditMode) {
       window.close()
-      return
-    }
 
-    if (window.confirm("Are you sure you want to close this window? Changes will not be saved in this case.")) {
+    } else if (isDisabled) {
+      window.location.href = `/order/${orderId}`
+
+    } else if (window.confirm("Are you sure you want to close this window? Changes will not be saved in this case.")) {
       window.location.href = `/order/${orderId}`
     }
   }

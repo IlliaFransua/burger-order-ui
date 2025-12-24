@@ -1,6 +1,6 @@
 import { useLocation, useParams } from "react-router-dom";
-import { OrderDetailsFormWidget } from "@/widgets/OrderDetailsFormWidget/ui/OrderDetailsFormWidget";
 import { useState } from "react";
+import { OrderDetailsWidget } from "@/widgets/OrderDetailsFormWidget";
 
 export const OrderDetailsPage = () => {
   const { orderId } = useParams()
@@ -11,7 +11,7 @@ export const OrderDetailsPage = () => {
   return (
     <div>
       {isEditMode ? <h1>Edit order</h1> : <h1>View order</h1>}
-      <OrderDetailsFormWidget orderId={orderId} isEditMode={isEditMode} setIsEditMode={setIsEditMode} />
+      <OrderDetailsWidget orderId={orderId} isEditMode={isEditMode} setIsEditMode={setIsEditMode} />
     </div>
   )
 }

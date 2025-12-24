@@ -1,9 +1,12 @@
 import { Suspense } from "react"
+import { QueryProvider } from "./with-query"
 
 export const Providers = ({ children }) => {
   return (
     <Suspense fallback="Loading...">
-      <div>{children}</div>
+      <QueryProvider>
+        {children}
+      </QueryProvider>
     </Suspense >
   )
 }

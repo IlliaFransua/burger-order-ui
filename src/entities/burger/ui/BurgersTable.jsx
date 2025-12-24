@@ -1,0 +1,17 @@
+import { DataGrid } from "@/shared/ui/DataGrid"
+import { responseBurgersColumns } from "../config/columnTypes"
+
+export const BurgersTable = ({ burgers, isEditMode, selectionModel, onSelectionChange, ...others }) => {
+  return (
+    <DataGrid
+      rows={burgers}
+      columns={responseBurgersColumns}
+      checkboxSelection={isEditMode}
+      rowSelectionModel={isEditMode ? selectionModel : { type: 'include', ids: new Set() }}
+      onRowSelectionModelChange={isEditMode ? onSelectionChange : undefined}
+      disableRowSelectionOnClick={!isEditMode}
+      {...others}
+    />
+  )
+}
+

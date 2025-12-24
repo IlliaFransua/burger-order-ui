@@ -53,7 +53,7 @@ export const OrderDetailsFormWidget = ({ orderId, isEditMode, setIsEditMode }) =
               originalBurgerIds={orderData.burgers.map(burger => burger.id)}
               setIsDisabled={setIsDisabled} />
             : <OpenEditOrderWindow orderId={orderId} />}
-          <OpenOrdersWindow orderId={orderId} isDisabled={isDisabled} />
+          <OpenOrdersWindow isEditMode={isEditMode} orderId={orderId} isDisabled={isDisabled} />
         </Stack>
       }
     </div>

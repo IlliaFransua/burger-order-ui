@@ -51,6 +51,7 @@ export const EditOrderButton = ({ orderId, isEditMode, allAvailableBurgers, sele
       window.location.href = `/order/${responseData.id}`
     } catch (error) {
       console.log(error)
+      alert("Something went wrong. Reload the page and see if the order was successfully updated.")
     } finally {
       setIsLoading(false)
     }

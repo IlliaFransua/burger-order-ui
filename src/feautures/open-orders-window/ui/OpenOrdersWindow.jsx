@@ -1,7 +1,7 @@
 import { Button } from "@/shared/ui/Button"
 import { CancelIcon } from "@/shared/ui/CancelIcon"
 
-export const OpenOrdersWindow = ({ orderId, isDisabled }) => {
+export const OpenOrdersWindow = ({ isEditMode, orderId, isDisabled }) => {
   function handleOpen() {
     if (isDisabled) {
       window.close()

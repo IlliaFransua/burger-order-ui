@@ -4,13 +4,11 @@ import { OrderTableWidget } from "@/widgets/OrderTableWidget"
 
 export const OrdersPage = () => {
   return (
-    <div>
+    <Stack>
       <h1>All orders</h1>
-      <Stack>
-        <OpenCreateOrderWindowButton />
-        <OrderTableWidget />
-      </Stack>
-    </div>
+      <OpenCreateOrderWindowButton />
+      <OrderTableWidget />
+    </Stack>
   )
 }
 

@@ -4,13 +4,13 @@ import { responseBurgersColumns } from "../config/columnTypes"
 export const BurgersTable = ({ burgers, isEditMode, selectionModel, onSelectionChange, ...others }) => {
   return (
     <DataGrid
+      {...others}
       rows={burgers}
       columns={responseBurgersColumns}
       checkboxSelection={isEditMode}
       rowSelectionModel={isEditMode ? selectionModel : { type: 'include', ids: new Set() }}
       onRowSelectionModelChange={isEditMode ? onSelectionChange : undefined}
       disableRowSelectionOnClick={!isEditMode}
-      {...others}
     />
   )
 }

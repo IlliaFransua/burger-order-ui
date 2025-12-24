@@ -17,6 +17,7 @@ export const paginatedOrdersColumns = ({ handleEdit, handleDelete, handleView })
   {
     field: 'burgers',
     headerName: 'Burgers',
+    flex: 1,
     width: 300,
     sortingOrder: [],
     sortable: false,

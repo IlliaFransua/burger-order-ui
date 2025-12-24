@@ -45,6 +45,7 @@ export const CreateOrderButton = ({ burgers, selectedRows }) => {
       navigate("/order/" + responseData.id)
     } catch (error) {
       console.log(error)
+      alert("Something went wrong. Reload the page and see if the order was created.")
     } finally {
       setIsLoading(false)
     }

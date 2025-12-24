@@ -1,10 +1,14 @@
+import { Button } from "@/shared/ui/Button"
+import { Stack } from "@/shared/ui/Stack"
 import { Link } from "react-router-dom"
 
 export const NotFoundPage = () => {
   return (
-    <div>
-      <div>404 not found</div>
-      <Link to={'/'}></Link>
-    </div>
+    <Stack>
+      <h1>404 not found</h1>
+      <Link to={'/'}>
+        Open home page
+      </Link>
+    </Stack>
   )
 }

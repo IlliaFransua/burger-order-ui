@@ -3,23 +3,24 @@ import { getPaginatedOrders } from "../api/orderService"
 import { Skeleton } from "@mui/material"
 import { paginatedOrdersColumns } from "../config/columnTypes"
 
-export const PaginatedOrdersTable = ({ responseData, isLoading, onPaginationModelChange, sortModel, onSortModelChange, handleEdit, handleDelete, handleView }) => {
+export const PaginatedOrdersTable = ({ paginatedOrders, isLoading, onPaginationModelChange, sortModel, onSortModelChange, handleEdit, handleDelete, handleView }) => {
   if (isLoading) {
     return <Skeleton sx={{ height: '400px' }} />
   }
+
   return (
     <DataGrid
-      rows={responseData.content}
+      rows={paginatedOrders.content}
       columns={paginatedOrdersColumns({ handleEdit, handleDelete, handleView })}
-      rowCount={responseData.totalElements}
+      rowCount={paginatedOrders.totalElements}
 
       paginationMode="server"
       initialState={{
         pagination: {
           paginationModel: {
-            page: responseData.number,
-            size: responseData.size,
-            pageSize: responseData.pageable.pageSize
+            page: paginatedOrders.number,
+            size: paginatedOrders.size,
+            pageSize: paginatedOrders.pageable.pageSize
           },
         }
       }}

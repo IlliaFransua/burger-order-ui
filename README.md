@@ -6,11 +6,11 @@ This project is a web interface for managing burger orders, wrote with **React (
 
 This project uses **Feature-Sliced Design (FSD)**.
 
-🔗 [**There is an article in Ukrainian about quick start into FSD**](https://telegra.ph/Feature-Sliced-Design-FSD-12-24)
+🔗 [There is an article in Ukrainian about quick start into FSD](https://telegra.ph/Feature-Sliced-Design-FSD-12-24)
 
-🔗 [**List of websites people are building with FSD**](https://feature-sliced.design/examples)
+🔗 [List of websites people are building with FSD](https://feature-sliced.design/examples)
 
-🔗 [**FSD Docs**](https://feature-sliced.design/docs)
+🔗 [FSD Docs](https://feature-sliced.design/docs)
 
 ## 🎥 Video preview
 
@@ -42,6 +42,8 @@ This project uses **Feature-Sliced Design (FSD)**.
 
 3. **Run Tests:**
 
+   > Note: It's not necessarily, but if you'll do it, better to drop `DROP DATABASE burger_order_db_dev` and `CREATE DATABASE burger_order_db_dev` after tests.
+   
    ```bash
    mvn test
    ```
@@ -61,11 +63,14 @@ This project uses **Feature-Sliced Design (FSD)**.
    ```bash
    git clone https://github.com/IlliaFransua/burger-order-ui
    cd ./burger-order-ui
+   git fetch --all
+   git checkout vite-integration
    ```
 
 2. **Build the Application:**
 
    ```bash
+   npm install
    npm run build
    ```
 
@@ -77,9 +82,7 @@ This project uses **Feature-Sliced Design (FSD)**.
 
 4. **Open the link in your browser** 
 
-   ```bash
-   http://localhost:5173
-   ```
+   [http://localhost:5173](http://localhost:5173)
 
 5. **Congratulation 🎄⛄✨**
 

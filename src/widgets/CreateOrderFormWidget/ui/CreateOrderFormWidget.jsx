@@ -1,5 +1,4 @@
 import { Stack } from "@/shared/ui/Stack"
-import { OrderFormProvider } from "../model/OrderFormProvider"
 import { CreateOrderButton } from "@/feautures/create-order"
 import { BurgersTable, findAllBurgers } from "@/entities/burger"
 import { useEffect, useState } from "react"
@@ -17,17 +16,13 @@ export const CreateOrderFormWidget = () => {
   }
 
   return (
-    <div>
-      <OrderFormProvider initialData={null}>
-        <Stack>
-          <BurgersTable burgers={burgers}
-            isEditMode={true}
-            selectionModel={selectedRows}
-            onSelectionChange={handleSelectionChange} />
-          <CreateOrderButton burgers={burgers} selectedRows={selectedRows} />
-        </Stack>
-      </OrderFormProvider>
-    </div>
+    <Stack>
+      <BurgersTable burgers={burgers}
+        isEditMode={true}
+        selectionModel={selectedRows}
+        onSelectionChange={handleSelectionChange} />
+      <CreateOrderButton burgers={burgers} selectedRows={selectedRows} />
+    </Stack>
   )
 }
 

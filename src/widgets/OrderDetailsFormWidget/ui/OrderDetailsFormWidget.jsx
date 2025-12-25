@@ -7,22 +7,22 @@ import { Stack } from "@/shared/ui/Stack"
 import { useEffect, useState } from "react"
 
 export const OrderDetailsWidget = ({ orderId, isEditMode }) => {
-  const { data: order, isLoading } = useOrder(orderId)
-  const { data: allBurgers = [] } = useAllBurgers(isEditMode)
+  const { data: order, isLoading: isOrderLoading } = useOrder(orderId)
+  const { data: allBurgers = [], isLoading: isBurgersLoading } = useAllBurgers(isEditMode)
 
-  const [selected, setSelected] = useState({ type: 'include', ids: new Set() })
+  const [selectedBurgers, setSelectedBurgers] = useState({ type: 'include', ids: new Set() })
   const [isDisabled, setIsDisabled] = useState(true)
 
   useEffect(() => {
-    if (!isLoading && order && isEditMode) {
-      setSelected({
+    if (isEditMode && !isOrderLoading) {
+      setSelectedBurgers({
         type: 'include',
         ids: new Set(order.burgers.map(burger => burger.id))
       })
     }
-  }, [isLoading, order, isEditMode])
+  }, [isOrderLoading, order?.burgers, isEditMode])
 
-  if (isLoading) {
+  if (isOrderLoading || (isEditMode && isBurgersLoading)) {
     return <h4>Loading...</h4>
   }
 
@@ -36,15 +36,15 @@ export const OrderDetailsWidget = ({ orderId, isEditMode }) => {
       <BurgersTable
         burgers={isEditMode ? allBurgers : order.burgers}
         isEditMode={isEditMode}
-        selectionModel={selected}
-        onSelectionChange={setSelected}
+        selectionModel={selectedBurgers}
+        onSelectionChange={setSelectedBurgers}
       />
 
       {isEditMode ? (
         <EditOrderButton orderId={orderId}
           isEditMode={isEditMode}
           allAvailableBurgers={allBurgers}
-          selectedRows={selected}
+          selectedRows={selectedBurgers}
           originalBurgerIds={order.burgers.map(burger => burger.id)}
           setIsDisabled={setIsDisabled} />
       ) : (

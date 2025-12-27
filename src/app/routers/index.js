@@ -1,1 +1,1 @@
-export { router } from "./roter.jsx"
+export { router } from "./roter.jsx";

@@ -8,20 +8,20 @@ import { OrderCreatePage } from "@/pages/OrderCreatePage";
 
 export const router = createBrowserRouter([
   {
-    path: '/',
+    path: "/",
     element: <MainLayout />,
     children: [
       { index: true, element: <HomePage /> },
       {
-        path: 'order',
+        path: "order",
         children: [
           { index: true, element: <OrdersPage /> },
-          { path: 'create', element: <OrderCreatePage /> },        // create
-          { path: ':orderId', element: <OrderDetailsPage /> },      // view
-          { path: ':orderId/edit', element: <OrderDetailsPage /> }, // edit
-        ]
+          { path: "create", element: <OrderCreatePage /> }, // create
+          { path: ":orderId", element: <OrderDetailsPage /> }, // view
+          { path: ":orderId/edit", element: <OrderDetailsPage /> }, // edit
+        ],
       },
-      { path: '*', element: <NotFoundPage /> },
-    ]
-  }
+      { path: "*", element: <NotFoundPage /> },
+    ],
+  },
 ]);

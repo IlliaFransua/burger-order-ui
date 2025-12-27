@@ -1,1 +1,1 @@
-export { areArraysEqual } from "./compareArrays.js"
+export { areArraysEqual } from "./compareArrays.js";

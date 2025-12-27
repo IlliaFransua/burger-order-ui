@@ -1,1 +1,1 @@
-export { OrderTableWidget } from "./ui/OrderTableWidget.jsx"
+export { OrderTableWidget } from "./ui/OrderTableWidget.jsx";

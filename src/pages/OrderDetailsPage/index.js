@@ -1,1 +1,1 @@
-export { OrderDetailsPage } from "./OrderDetailsPage.jsx"
+export { OrderDetailsPage } from "./OrderDetailsPage.jsx";

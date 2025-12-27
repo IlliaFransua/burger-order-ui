@@ -1,1 +1,1 @@
-export { CreateOrderFormWidget } from "./ui/CreateOrderFormWidget.jsx"
+export { CreateOrderFormWidget } from "./ui/CreateOrderFormWidget.jsx";

@@ -1,1 +1,1 @@
-export { OpenEditOrderWindow } from "./ui/OpenEditOrderWindow.jsx"
+export { OpenEditOrderWindow } from "./ui/OpenEditOrderWindow.jsx";

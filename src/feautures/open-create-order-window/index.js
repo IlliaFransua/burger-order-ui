@@ -1,1 +1,1 @@
-export { OpenCreateOrderWindowButton } from "./ui/OpenCreateOrderWindow.jsx"
+export { OpenCreateOrderWindowButton } from "./ui/OpenCreateOrderWindow.jsx";

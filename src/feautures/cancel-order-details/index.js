@@ -1,1 +1,1 @@
-export { CancelOrderDetails } from "./ui/CancelOrderDetails.jsx"
+export { CancelOrderDetails } from "./ui/CancelOrderDetails.jsx";

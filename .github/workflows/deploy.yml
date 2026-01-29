@@ -33,7 +33,7 @@ jobs:
 
       - name: Build and Push Docker Image
         run: |
-          IMAGE_NAME=europe-west6-docker.pkg.dev/${{ github.event.repository.owner.login }}/docker-repo/burger-order-ui
+          IMAGE_NAME=europe-west6-docker.pkg.dev/burger-order-485523/docker-repo/burger-order-ui
 
           docker build -t $IMAGE_NAME:latest -t $IMAGE_NAME:${{ github.sha }} .
           docker push $IMAGE_NAME:latest

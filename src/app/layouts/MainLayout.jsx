@@ -1,3 +1,4 @@
+import { ProfileLineInfo } from "@/entities/profile/ui/ProfileLineInfo";
 import { AppBar } from "@/shared/ui/AppBar";
 import { Container } from "@/shared/ui/Container";
 import { Stack } from "@/shared/ui/Stack";
@@ -13,6 +14,7 @@ export const MainLayout = () => {
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
             Burger Order UI
           </Typography>
+          <ProfileLineInfo />
         </Toolbar>
       </AppBar>
       <Container>
